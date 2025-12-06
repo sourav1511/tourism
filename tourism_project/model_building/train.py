@@ -118,7 +118,7 @@ joblib.dump(best_model, "best_tourism_model_v1.joblib")
 
 
 # Upload to Hugging Face
-repo_id = "sp1505/tourism"
+repo_id = "sp1505/tourism_model"
 repo_type = "model"
 
 api = HfApi(token=os.getenv("HF_TOKEN"))
