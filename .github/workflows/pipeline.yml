@@ -77,9 +77,9 @@ jobs:
         run: |
           python tourism_project/model_building/train.py
 
- deploy-hosting:
+  deploy-hosting:
     runs-on: ubuntu-latest
-    needs: [model-traning,data-prep,register-dataset]
+    needs: [model-training,data-prep,register-dataset]
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
