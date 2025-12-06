@@ -3,11 +3,12 @@ from huggingface_hub import HfApi, create_repo
 import os
 
 
-repo_id = "sp1505/tourism"
+repo_id = "sp1505/tourism-dataset"
 repo_type = "dataset"
 
 # Initialize API client
 api = HfApi(token=os.getenv("HF_TOKEN"))
+
 
 # Step 1: Check if the space exists
 try:
