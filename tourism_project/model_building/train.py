@@ -112,27 +112,29 @@ with mlflow.start_run():
         "test_f1-score": test_report['1']['f1-score']
     })
 
-    # Save best model
-    joblib.dump(best_model, "best_tourism_model_v1.joblib")
 
-    # Upload to Hugging Face
-    repo_id = "sp1505/tourism"
-    repo_type = "model"
+# Save best model
+joblib.dump(best_model, "best_tourism_model_v1.joblib")
 
-    api = HfApi(token=os.getenv("HF_TOKEN"))
 
-    # Step 1: Check if the space exists
-    try:
-        api.repo_info(repo_id=repo_id, repo_type=repo_type)
-        print(f"Model Space '{repo_id}' already exists. Using it.")
-    except RepositoryNotFoundError:
-        print(f"Model Space '{repo_id}' not found. Creating new space...")
-        create_repo(repo_id=repo_id, repo_type=repo_type, private=False)
-        print(f"Model Space '{repo_id}' created.")
+# Upload to Hugging Face
+repo_id = "sp1505/tourism"
+repo_type = "model"
 
-    api.upload_file(
-        path_or_fileobj="best_tourism_model_v1.joblib",
-        path_in_repo="best_tourism_model_v1.joblib",
-        repo_id=repo_id,
-        repo_type=repo_type,
-    )
+api = HfApi(token=os.getenv("HF_TOKEN"))
+
+# Step 1: Check if the space exists
+try:
+    api.repo_info(repo_id=repo_id, repo_type=repo_type)
+    print(f"Model Space '{repo_id}' already exists. Using it.")
+except RepositoryNotFoundError:
+    print(f"Model Space '{repo_id}' not found. Creating new space...")
+    create_repo(repo_id=repo_id, repo_type=repo_type, private=False)
+    print(f"Model Space '{repo_id}' created.")
+
+api.upload_file(
+    path_or_fileobj="best_tourism_model_v1.joblib",
+    path_in_repo="best_tourism_model_v1.joblib",
+    repo_id=repo_id,
+    repo_type=repo_type,
+)

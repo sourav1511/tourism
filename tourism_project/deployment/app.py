@@ -3,12 +3,13 @@ import pandas as pd
 from huggingface_hub import hf_hub_download
 import joblib
 import os
+
 # Download and load the model
 model_path = hf_hub_download(repo_id="sp1505/tourism", filename="best_tourism_model_v1.joblib")
 model = joblib.load(model_path)
 
 model_path = hf_hub_download(
-    repo_id="sourav1511/tourism",   
+    repo_id="sourav1511/tourism",
     filename="best_tourism_model_v1.joblib",
     repo_type="model",
     token=os.environ.get("HF_TOKEN")
@@ -52,7 +53,7 @@ input_data = pd.DataFrame([{
     'pitchscore': pitchscore,
     'owncar': owncar,
     'childvisitor': childvisitor,
-    'Monthly_income': Monthly_income,
+    'Income': Monthly_income,
     'Designation': Designation,
     'Marital_status': Marital_status,
     'Product_pitched': Product_pitched,
