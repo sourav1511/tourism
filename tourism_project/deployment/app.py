@@ -23,13 +23,12 @@ Please enter the sensor and configuration data below to get a prediction.
 
 # User input
 city_tier = st.number_input("City Tier", min_value=1, max_value=3)
-duration_pitch = st.number_input("Pitch_duraation", min_value=5, max_value=127)
-number_person = st.number_input("Number_person", min_value=1, max_value=5)
-Followups = st.number_input("Follow_ups", min_value=1, max_value=6)
-property_star = st.number_input("Property_Star", min_value=3, max_value=5)
-number_trips = st.number_input("Number_trips", min_value=1, max_value=22)
+duration_pitch = st.number_input("duration_pitch", min_value=5, max_value=127)
+number_person = st.number_input("number_person", min_value=1, max_value=5)
+Followups = st.number_input("Followups", min_value=1, max_value=6)
+property_star = st.number_input("property_Star", min_value=3, max_value=5)
+number_trips = st.number_input("number_trips", min_value=1, max_value=22)
 passport = st.number_input("passport", min_value=0, max_value=1)
-Followups = st.number_input("Follow_ups", min_value=1, max_value=6)
 pitchscore = st.number_input("pitchscore", min_value=1, max_value=5)
 owncar = st.number_input("owncar", min_value=0, max_value=1)
 childvisitor = st.number_input("childvisitor", min_value=0, max_value=3)
@@ -50,7 +49,6 @@ input_data = pd.DataFrame([{
     'property_star': property_star,
     'number_trips': number_trips,
     'passport': passport,
-    'Followups': Followups,
     'pitchscore': pitchscore,
     'owncar': owncar,
     'childvisitor': childvisitor,
