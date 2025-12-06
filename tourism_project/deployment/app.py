@@ -6,7 +6,7 @@ import os
 
 # Download and load the model
 model_path = hf_hub_download(
-    repo_id="sourav1511/tourism_model",
+    repo_id="sp1505/tourism_model",
     filename="best_tourism_model_v1.joblib",
     repo_type="model",
     token=os.environ.get("HF_TOKEN")
