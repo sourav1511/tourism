@@ -15,6 +15,9 @@ from sklearn.metrics import accuracy_score, classification_report, recall_score
 import joblib
 import mlflow
 import mlflow.sklearn
+# for hugging face space authentication to upload files
+from huggingface_hub import login, HfApi, create_repo
+from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
 
 df = pd.read_csv("tourism_project/data/tourism.csv")
 print("Dataset loaded successfully.")
