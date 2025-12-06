@@ -13,7 +13,8 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score, classification_report, recall_score
 # for model serialization
 import joblib
-
+import mlflow
+import mlflow.sklearn
 
 df = pd.read_csv("tourism_project/data/tourism.csv")
 print("Dataset loaded successfully.")
