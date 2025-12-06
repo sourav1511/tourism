@@ -7,6 +7,13 @@ import joblib
 model_path = hf_hub_download(repo_id="sp1505/tourism", filename="best_tourism_model_v1.joblib")
 model = joblib.load(model_path)
 
+model_path = hf_hub_download(
+    repo_id="sourav1511/tourism",   
+    filename="best_tourism_model_v1.joblib",
+    repo_type="model",
+    token=os.environ.get("HF_TOKEN")
+)
+
 # Streamlit UI for Machine Failure Prediction
 st.title("Tourism App")
 st.write("""
