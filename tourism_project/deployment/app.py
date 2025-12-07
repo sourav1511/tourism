@@ -40,6 +40,8 @@ OwnCar = st.number_input("OwnCar", min_value=0, max_value=1)
 NumberOfChildrenVisiting = st.number_input("NumberOfChildrenVisiting", min_value=0, max_value=3)
 MonthlyIncome = st.number_input("MonthlyIncome")   
 Gender = st.selectbox("Gender", ["Male", "Female"])
+Designation = st.selectbox("Designation", ["Executive", "Manager", "Senior Manager", "AVP", "VP"])
+
 # Assemble input into DataFrame
 input_data = pd.DataFrame([{
     'Age': Age,
@@ -59,6 +61,7 @@ input_data = pd.DataFrame([{
     'NumberOfChildrenVisiting': NumberOfChildrenVisiting,
     'MonthlyIncome': MonthlyIncome,
     'Gender': Gender,
+    'Designation': Designation,
   }])
 
 if st.button("Predict Product Taken"):
