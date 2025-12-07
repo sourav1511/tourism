@@ -38,7 +38,7 @@ MaritalStatus = st.selectbox("Marital_status", ["Married", "Single", "Divorced",
 ProductPitched = st.selectbox("Product_pitch", ["Basic", "Delux", "Standard", "King", "Super Deluxe"])
 Gender = st.selectbox("Gender", ["Male", "Female"])
 Occupation = st.selectbox("Occupation", ["Salaried", "Freelancer", "Small Bussiness", "Large Bussiness"])
-TypeofContact = st.selectbox("Type_contact", ["Company Invited", "Self Inquiry"])
+TypeOfContact = st.selectbox("Type_contact", ["Company Invited", "Self Inquiry"])
 
 # Assemble input into DataFrame
 input_data = pd.DataFrame([{
