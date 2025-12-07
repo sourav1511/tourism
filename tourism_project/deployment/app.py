@@ -21,43 +21,45 @@ Please enter the sensor and configuration data below to get a prediction.
 """)
 
 # User input
-city_tier = st.number_input("City Tier", min_value=1, max_value=3)
-duration_pitch = st.number_input("duration_pitch", min_value=5, max_value=127)
-number_person = st.number_input("number_person", min_value=1, max_value=5)
-Followups = st.number_input("Followups", min_value=1, max_value=6)
-property_star = st.number_input("property_Star", min_value=3, max_value=5)
-number_trips = st.number_input("number_trips", min_value=1, max_value=22)
-passport = st.number_input("passport", min_value=0, max_value=1)
-pitchscore = st.number_input("pitchscore", min_value=1, max_value=5)
-owncar = st.number_input("owncar", min_value=0, max_value=1)
-childvisitor = st.number_input("childvisitor", min_value=0, max_value=3)
-Monthly_income = st.number_input("Income")
+Age = st.number_input("Age")
+CityTier = st.number_input("City Tier", min_value=1, max_value=3)
+DurationOfPitch = st.number_input("duration_pitch", min_value=5, max_value=127)
+NumberOfPersonVisiting = st.number_input("number_person", min_value=1, max_value=5)
+NumberOfFollowups = st.number_input("Followups", min_value=1, max_value=6)
+PreferredPropertyStar = st.number_input("property_Star", min_value=3, max_value=5)
+NumberOfTrips = st.number_input("number_trips", min_value=1, max_value=22)
+Passport = st.number_input("passport", min_value=0, max_value=1)
+PitchSatisfactionScore = st.number_input("pitchscore", min_value=1, max_value=5)
+OwnCar = st.number_input("owncar", min_value=0, max_value=1)
+NumberOfChildrenVisiting = st.number_input("childvisitor", min_value=0, max_value=3)
+MonthlyIncome = st.number_input("Income")
 Designation = st.selectbox("Designation", ["Executive", "Manager", "Senior Manager", "AVP", "VP"])
-Marital_status = st.selectbox("Marital_status", ["Married", "Single", "Divorced", "Unmarried"])
-Product_pitched = st.selectbox("Product_pitch", ["Basic", "Delux", "Standard", "King", "Super Deluxe"])
+MaritalStatus = st.selectbox("Marital_status", ["Married", "Single", "Divorced", "Unmarried"])
+ProductPitched = st.selectbox("Product_pitch", ["Basic", "Delux", "Standard", "King", "Super Deluxe"])
 Gender = st.selectbox("Gender", ["Male", "Female"])
 Occupation = st.selectbox("Occupation", ["Salaried", "Freelancer", "Small Bussiness", "Large Bussiness"])
-Type_contact = st.selectbox("Type_contact", ["Company Invited", "Self Inquiry"])
+TypeofContact = st.selectbox("Type_contact", ["Company Invited", "Self Inquiry"])
 
 # Assemble input into DataFrame
 input_data = pd.DataFrame([{
-    'City Tier': city_tier,
-    'duration_pitch': duration_pitch,
-    'number_person': number_person,
-    'Followups': Followups,
-    'property_star': property_star,
-    'number_trips': number_trips,
-    'passport': passport,
-    'pitchscore': pitchscore,
-    'owncar': owncar,
-    'childvisitor': childvisitor,
-    'Income': Monthly_income,
+    'Age': Age,
+    'City Tier': CityTier,
+    'duration_pitch': DurationOfPitch,
+    'number_person': NumberOfPersonVisiting,
+    'Followups': NumberOfFollowups,
+    'property_star': PreferredPropertyStar,
+    'number_trips': NumberOfTrips,
+    'passport': Passport,
+    'pitchscore': PitchSatisfactionScore,
+    'owncar': OwnCar,
+    'childvisitor': NumberOfchildrenVisiting,
+    'Income': MonthlyIncome,
     'Designation': Designation,
-    'Marital_status': Marital_status,
-    'Product_pitched': Product_pitched,
+    'Marital_status': MaritalStatus,
+    'Product_pitched': ProductPitched,
     'Gender': Gender,
     'Occupation': Occupation,
-    'Type_contact': Type_contact
+    'Type_contact': TypeOfContact
   }])
 
 

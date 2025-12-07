@@ -23,7 +23,7 @@ df = pd.read_csv("tourism_project/data/tourism.csv")
 print("Dataset loaded successfully.")
 
 # Drop the unique identifier
-df.drop(columns=['CustomerID'], inplace=True)
+df = df.drop(columns=["Unnamed: 0", "CustomerID"])
 target_col = 'ProdTaken'
 
 # Split into X (features) and y (target)
