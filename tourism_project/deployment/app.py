@@ -19,11 +19,6 @@ st.write("""
 This application predicts the likelihood of a a person taking a product.
 Please enter the sensor and configuration data below to get a prediction.
 """)
-    filename="best_tourism_model_v1.joblib",
-    repo_type="model",
-    token=os.environ.get("HF_TOKEN")  # required if private
-)
-model = joblib.load(model_path)
 
 st.title("Tourism Prediction App")
 
